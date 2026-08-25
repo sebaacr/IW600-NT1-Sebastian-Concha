@@ -13,7 +13,7 @@ Se creó la estructura base del proyecto con Vue 3. Se implementó Vue Router pa
 Se creó el componente reutilizable `ProductoCard.vue` ubicado en `src/components/`. Este componente recibe un objeto `producto` a través de **Props** que contiene los atributos: nombre, categoría, productor, comuna y precio. La vista principal `Productos.vue` actúa como componente padre, definiendo un arreglo reactivo con 6 productos representativos de distintas comunas de Ñuble (San Carlos, Coihueco, Chillán y Portezuelo) y renderizándolos mediante la iteración del componente hijo.
 
 ## Parte C - Listas y condicionales
-(Pendiente)
+Se implementó un filtro dinámico por comuna utilizando la directiva `v-model` vinculada a un elemento `<select>`. La lista de productos se genera dinámicamente mediante la directiva `v-for` a partir de una propiedad computada (`computed`) que filtra los datos reactivos. Adicionalmente, se incorporó lógica condicional mediante `v-if` y `v-else`: si existen coincidencias se despliega la cuadrícula de productos, y si no hay resultados disponibles (como al seleccionar Pemuco), la aplicación muestra un mensaje informativo al usuario.
 
 ## Parte D - Comunicación mediante Emit
 (Pendiente)
