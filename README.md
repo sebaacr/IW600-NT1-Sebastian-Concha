@@ -16,7 +16,7 @@ Se creó el componente reutilizable `ProductoCard.vue` ubicado en `src/component
 Se implementó un filtro dinámico por comuna utilizando la directiva `v-model` vinculada a un elemento `<select>`. La lista de productos se genera dinámicamente mediante la directiva `v-for` a partir de una propiedad computada (`computed`) que filtra los datos reactivos. Adicionalmente, se incorporó lógica condicional mediante `v-if` y `v-else`: si existen coincidencias se despliega la cuadrícula de productos, y si no hay resultados disponibles (como al seleccionar Pemuco), la aplicación muestra un mensaje informativo al usuario.
 
 ## Parte D - Comunicación mediante Emit
-(Pendiente)
+Se agregó un botón de interacción ("Me interesa") en el componente hijo `ProductoCard.vue`. Al hacer clic, el usuario desencadena una función interna que emite un evento personalizado (`manifestar-interes`) transportando el nombre del producto seleccionado hacia la vista padre `Productos.vue`. El componente padre escucha este evento mediante `@manifestar-interes` y ejecuta la función `registrarInteres`, actualizando una variable reactiva que muestra un mensaje de confirmación en la parte superior de la interfaz.
 
 ## Parte E - Formulario y validación
 (Pendiente)

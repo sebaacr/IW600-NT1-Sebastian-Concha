@@ -2,6 +2,11 @@
   <div class="catalogo">
     <h1>Catálogo de Productos</h1>
     
+    <!-- Notificación visible cuando el padre recibe el $emit -->
+    <div v-if="mensajeInteres" class="alerta-confirmacion">
+      <p>✅ {{ mensajeInteres }}</p>
+    </div>
+
     <!-- Filtro dinámico por Comuna -->
     <div class="filtro-container">
       <label for="comuna-select"><strong>Filtrar por Comuna: </strong></label>
@@ -15,16 +20,16 @@
       </select>
     </div>
 
-    <!-- Renderizado Condicional y Lista Dinámica -->
+    <!-- Renderizado con escucha de evento @manifestar-interes -->
     <div v-if="productosFiltrados.length > 0" class="grid-productos">
       <ProductoCard 
         v-for="item in productosFiltrados" 
         :key="item.id" 
-        :producto="item" 
+        :producto="item"
+        @manifestar-interes="registrarInteres"
       />
     </div>
     
-    <!-- Mensaje cuando la condición no arroja resultados -->
     <div v-else class="mensaje-vacio">
       <p>⚠️ No se encontraron productos disponibles para la comuna seleccionada.</p>
     </div>
@@ -36,6 +41,7 @@ import { ref, computed } from 'vue'
 import ProductoCard from '../components/ProductoCard.vue'
 
 const comunaSeleccionada = ref('')
+const mensajeInteres = ref('')
 
 const productos = ref([
   { id: 1, nombre: 'Miel Orgánica Nativa', categoria: 'Conservas', productor: 'Don Pedro', comuna: 'San Carlos', precio: 6500 },
@@ -52,11 +58,24 @@ const productosFiltrados = computed(() => {
   }
   return productos.value.filter(p => p.comuna === comunaSeleccionada.value)
 })
+
+// Función que se ejecuta al recibir el emit del hijo
+const registrarInteres = (nombreProducto) => {
+  mensajeInteres.value = `Has manifestado interés en: "${nombreProducto}". ¡Pronto nos pondremos en contacto!`
+}
 </script>
 
 <style scoped>
 .catalogo {
   padding: 20px;
+}
+.alerta-confirmacion {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
 }
 .filtro-container {
   margin-bottom: 20px;
