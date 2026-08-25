@@ -22,7 +22,7 @@ Se agregó un botón de interacción ("Me interesa") en el componente hijo `Prod
 Se desarrolló la vista `Contacto.vue` incorporando un formulario de interacción con los campos: nombre, correo electrónico, teléfono, comuna y mensaje. Todos los campos están vinculados de manera bidireccional mediante la directiva `v-model`. Se implementó lógica de validación que verifica la completitud de los datos obligatorios antes del envío. Si falta información, se despliega una alerta de error; si los datos son válidos, la aplicación oculta los errores y muestra una tarjeta de confirmación con un resumen completo de los datos ingresados.
 
 ## Parte F - Diseño y presentación
-(Pendiente)
+Se aplicó una paleta de colores coherente con la temática agrícola y regional de Ñuble (tonos verdes forestales `#1b5e20` y acentos cálidos). Se utilizó un diseño limpio mediante CSS Grid y Flexbox para asegurar legibilidad, espaciado adecuado y adaptabilidad básica a pantallas móviles (responsive). Se estandarizaron las tarjetas, botones y encabezados para dar consistencia visual en todas las vistas.
 
 ## Tecnologías utilizadas
 Vue 3, Vite, Vue Router, JavaScript, HTML, CSS.
@@ -33,4 +33,4 @@ Vue 3, Vite, Vue Router, JavaScript, HTML, CSS.
 3. Ejecutar `npm run dev`.
 
 ## Reflexión final
-(Pendiente para el final de la prueba)
+El aspecto que presentó mayor dificultad fue coordinar correctamente la comunicación entre componentes mediante `$emit` para actualizar el estado del padre de forma reactiva sin recargar la vista. Se resolvió analizando la sintaxis de `defineEmits` en la API de Script Setup de Vue 3 y asegurando el paso de parámetros adecuado a la función receptora en el componente padre.
