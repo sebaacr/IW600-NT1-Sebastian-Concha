@@ -10,7 +10,7 @@ Prototipo frontend de una plataforma para que productores de la Región de Ñubl
 Se creó la estructura base del proyecto con Vue 3. Se implementó Vue Router para la navegación entre las vistas Inicio, Productos, Productores y Contacto sin recargar la página.
 
 ## Parte B - Componentes y Props
-(Pendiente)
+Se creó el componente reutilizable `ProductoCard.vue` ubicado en `src/components/`. Este componente recibe un objeto `producto` a través de **Props** que contiene los atributos: nombre, categoría, productor, comuna y precio. La vista principal `Productos.vue` actúa como componente padre, definiendo un arreglo reactivo con 6 productos representativos de distintas comunas de Ñuble (San Carlos, Coihueco, Chillán y Portezuelo) y renderizándolos mediante la iteración del componente hijo.
 
 ## Parte C - Listas y condicionales
 (Pendiente)
