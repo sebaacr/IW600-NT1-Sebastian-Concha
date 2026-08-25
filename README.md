@@ -19,7 +19,7 @@ Se implementó un filtro dinámico por comuna utilizando la directiva `v-model` 
 Se agregó un botón de interacción ("Me interesa") en el componente hijo `ProductoCard.vue`. Al hacer clic, el usuario desencadena una función interna que emite un evento personalizado (`manifestar-interes`) transportando el nombre del producto seleccionado hacia la vista padre `Productos.vue`. El componente padre escucha este evento mediante `@manifestar-interes` y ejecuta la función `registrarInteres`, actualizando una variable reactiva que muestra un mensaje de confirmación en la parte superior de la interfaz.
 
 ## Parte E - Formulario y validación
-(Pendiente)
+Se desarrolló la vista `Contacto.vue` incorporando un formulario de interacción con los campos: nombre, correo electrónico, teléfono, comuna y mensaje. Todos los campos están vinculados de manera bidireccional mediante la directiva `v-model`. Se implementó lógica de validación que verifica la completitud de los datos obligatorios antes del envío. Si falta información, se despliega una alerta de error; si los datos son válidos, la aplicación oculta los errores y muestra una tarjeta de confirmación con un resumen completo de los datos ingresados.
 
 ## Parte F - Diseño y presentación
 (Pendiente)
